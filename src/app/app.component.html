@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<h3>Simple CRUD</h3>
+		<div class="col-4">
+			<div class="form-group">
+				<input type="text" class="form-control" [(ngModel)]="name">
+			</div>
+		</div>
+		<div class="col-1">
+			<button (click)="save()" class="btn btn-success">Save</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6	 mt-2">
+			<h3>Pending List</h3>
+			<ul class="list-group">
+				<li class="list-group-item" *ngFor="let item of pendingItems;let i=index" >{{item}} 
+					<div class="float-end">
+						<a href="#" (click)="edit(i)"><i class="bi bi-pencil-fill"></i>
+						</a>&nbsp;
+						<a href="#" (click)="delete(i)"><i class="bi bi-trash-fill text-danger"></i>
+						</a>&nbsp;
+						<a href="#" (click)="complete(i)"><i class="bi bi-check-circle-fill text-success"></i>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-6	 mt-2">
+			<h3>Completed List</h3>
+			<ul class="list-group">
+				<li class="list-group-item" *ngFor="let item of completedItems;" >{{item}} </li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
